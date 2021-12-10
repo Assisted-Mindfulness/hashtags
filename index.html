@@ -27,7 +27,7 @@
 
       .form-signin {
           width:     100%;
-          max-width: 830px;
+          max-width: 530px;
           padding:   15px;
           margin:    auto;
       }
@@ -49,25 +49,20 @@
   <form id="hashtags-form">
     <img class="mb-4" src="https://emotion-tracker.dev/img/logo.svg" alt="" height="57">
 
-    <div class="row">
+    <div class="row" id="category-place"></div>
 
-      <div class="col-12 col-md-6">
-        <h1 class="h5 mb-3 fw-normal">Please insert text</h1>
+    <h3 class="h6 my-3 fw-normal">Please insert text</h3>
 
-        <div class="form-floating mb-4">
-          <textarea rows="5" class="form-control" id="text"> </textarea>
-          <label for="text">Text with hashtags</label>
-        </div>
-
-        <button class="w-100 btn btn-lg btn-primary" type="button" onclick="clearAndCopyHashtags()">Clear and copy
-                                                                                                    hashtags
-        </button>
-      </div>
-
-      <div class="col-12 col-md-6">
-        <div class="row" id="category-place"></div>
-      </div>
+    <div class="form-floating mb-4">
+      <textarea rows="5" class="form-control" id="text"> </textarea>
+      <label for="text">Text with hashtags</label>
     </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="button" onclick="clearAndCopyHashtags()">Clear and copy
+                                                                                                hashtags
+    </button>
+
+
   </form>
 </main>
 
