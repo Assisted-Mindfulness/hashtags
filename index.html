@@ -296,7 +296,7 @@
      * @returns {string}
      */
     function createHashTag(text) {
-        return '#' + text.replaceAll(' ', '_').replaceAll('.', '_').toLowerCase();
+        return '#' + text.replaceAll(' ', '_').replaceAll('.', 'ー').toLowerCase();
     }
 
     /**
