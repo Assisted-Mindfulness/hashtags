@@ -253,7 +253,7 @@
         let full = item.split('.')
 
         let value = full.pop();
-        let title = full.join(' ');
+        let title = full.join('.');
 
         collection.hasOwnProperty(title)
             ? collection[title].push(value)
@@ -296,7 +296,7 @@
      * @returns {string}
      */
     function createHashTag(text) {
-        return '#' + text.replaceAll(' ', '_').replaceAll('.', 'ー').toLowerCase();
+        return '#' + text.replaceAll(' ', '_').toLowerCase();
     }
 
     /**
