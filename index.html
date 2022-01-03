@@ -94,7 +94,7 @@
     let category = [
         'Social.Friends.Ivan',
         'Social.Friends.Alena',
-        'Social.Attibutes.Value'
+        'Social.Attibutes.Value',
     ];
 
     let main = category.reduce((memo, item) => {
@@ -106,7 +106,7 @@
     }, {});
 
     Object.entries(main).forEach((values) => {
-        let items = values[1].map((tag) => createCategoryItemsTemplate(tag)).join(' ');
+        let items = values[1].map((tag) => createCategoryItemsTemplate(tag,  values[0])).join(' ');
 
         let template = document.querySelector('#category-container');
         let clone = template.content.querySelector('div').cloneNode(true);
@@ -121,11 +121,12 @@
      * @param name
      * @returns {string}
      */
-    function createCategoryItemsTemplate(name) {
+    function createCategoryItemsTemplate(name, title) {
+
         let template = document.querySelector('#category-item');
         let clone = template.content.querySelector('div').cloneNode(true);
 
-        let hashtag = createHashTag(name)
+        let hashtag = createHashTag(title + '.' + name)
 
         return clone.outerHTML
             .replace(/{slug}/g, hashtag)
@@ -138,7 +139,7 @@
      * @returns {string}
      */
     function createHashTag(text) {
-        return '#' + text.replaceAll(' ', '_').toLowerCase();
+        return '#' + text.replaceAll(' ', '_').replaceAll('.', '_').toLowerCase();
     }
 
     /**
